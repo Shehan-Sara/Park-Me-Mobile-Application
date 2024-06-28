@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:park_me/widgets/elevated_button_fill_widget.dart';
+import 'package:park_me/widgets/elevated_button_outline_widget.dart';
 
 class GetStartedView extends StatefulWidget {
   const GetStartedView({super.key});
@@ -146,18 +148,18 @@ class _GetStartedViewState extends State<GetStartedView>
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                          ElevatedButton(
+                          ElevatedButtonFill(
                             onPressed: () {
                               Navigator.pushNamed(context, '/started2');
                             },
-                            child: Text('Login'),
+                            label: 'Get started',
                           ),
                           const SizedBox(height: 10.0),
-                          ElevatedButton(
+                          ElevatedButtonOutline(
                             onPressed: () {
                               Navigator.pushNamed(context, '/home');
                             },
-                            child: Text('Skip'),
+                            label: 'Skip',
                           ),
                         ],
                       ),
