@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:park_me/widgets/elevated_button_fill_widget.dart';
 import 'package:park_me/widgets/elevated_button_outline_widget.dart';
 
 class GetStartedView extends StatefulWidget {
@@ -104,7 +103,7 @@ class _GetStartedViewState extends State<GetStartedView>
                         tag: 'logo_with_slogan_tag',
                         child: Image.asset(
                           'assets/images/slogun.png',
-                          width: 140.0,
+                          width: 180.0,
                         ),
                       ),
                       const Spacer(),
@@ -135,7 +134,7 @@ class _GetStartedViewState extends State<GetStartedView>
                   style: Theme.of(context)
                       .textTheme
                       .titleMedium
-                      ?.copyWith(color: Colors.grey),
+                      ?.copyWith(color: const Color.fromARGB(255, 71, 69, 69)),
                 ),
               ),
               const Spacer(),
@@ -148,19 +147,25 @@ class _GetStartedViewState extends State<GetStartedView>
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                          ElevatedButtonFill(
+                          ElevatedButtonOutline(
                             onPressed: () {
                               Navigator.pushNamed(context, '/started2');
                             },
                             label: 'Get started',
                           ),
                           const SizedBox(height: 10.0),
-                          ElevatedButtonOutline(
-                            onPressed: () {
+                          GestureDetector(
+                            onTap: () {
                               Navigator.pushNamed(context, '/home');
                             },
-                            label: 'Skip',
-                          ),
+                            child: const Text(
+                              'Skip',
+                              style: TextStyle(
+                                color: Color.fromARGB(
+                                    255, 33, 37, 243), // Normal text color
+                              ),
+                            ),
+                          )
                         ],
                       ),
                     ),
@@ -180,7 +185,7 @@ class _GetStartedViewState extends State<GetStartedView>
                   const Spacer(),
                   Image.asset(
                     'assets/images/startup.png',
-                    width: 120.0,
+                    width: 180.0,
                   ),
                 ],
               ),
